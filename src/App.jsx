@@ -5,6 +5,7 @@ import HomeView from './views/HomeView'
 import ListView from './views/ListView'
 import DetailView from './views/DetailView'
 import CreateEditView from './views/CreateEditView'
+import NotFound from './views/NotFound'
 import { ItemsProvider } from './context/ItemsContext'
 
 export default function App(){
