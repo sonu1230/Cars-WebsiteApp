@@ -39,10 +39,22 @@ export default function useItems(){
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
   }, [items])
+// Add new car-Date.now()  generates a unique string id
+  function addItem(data ){
 
-  function addItem(/* data */){ /* TODO */ }
-  function updateItem(/* id, patch */){ /* TODO */ }
-  function deleteItem(/* id */){ /* TODO */ }
+    setItems(prev => [...prev, { ...data, id: String(Date.now()) }])
+
+   }
+   // Update existing car-map replaces only the car with matching id
+  function updateItem(id, patch){ 
+    setItems(prev => prev.map(c => c.id === id ? { ...c, ...patch } : c))
+
+   }
+   //Delete Car - filter returns new array without removed car
+  function deleteItem(id){
+     setItems(prev => prev.filter(c => c.id !== id))
+
+   }
 
   // const categories = useMemo(() => { /* TODO */ }, [items])
 
