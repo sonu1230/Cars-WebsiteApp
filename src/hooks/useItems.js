@@ -35,7 +35,10 @@ export default function useItems(){
 
   // TODO: load from localStorage on mount
 
-  // TODO: persist to localStorage when items change
+  //persist to localStorage when items change
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
+  }, [items])
 
   function addItem(/* data */){ /* TODO */ }
   function updateItem(/* id, patch */){ /* TODO */ }
