@@ -56,7 +56,8 @@ export default function useItems(){
 
    }
 
-  // const categories = useMemo(() => { /* TODO */ }, [items])
+  // Build unique sorted category list from current items
+  const categories = useMemo([...new Set(items.map(c => c.category))].sort(), [items])
 
   const derived = useMemo(() => {
     // TODO: apply search, category, min/max and sort
