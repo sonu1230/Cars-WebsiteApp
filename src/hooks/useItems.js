@@ -41,8 +41,7 @@ export default function useItems(){
   }, [items])
 // Add new car-Date.now()  generates a unique string id
   function addItem(data ){
-
-    setItems(prev => [...prev, { ...data, id: String(Date.now()) }])
+     setItems(prev => [...prev, { ...data, id: String(Date.now()) }])
 
    }
    // Update existing car-map replaces only the car with matching id
@@ -62,7 +61,24 @@ export default function useItems(){
   const derived = useMemo(() => {
     // TODO: apply search, category, min/max and sort
     return items
-  }, [items, search, category, minValue, maxValue, sortKey, sortDir])
+    //Search filter by car name
+    .filter(c => c.name.toLowerCase().includes(search.toLowerCase()))
+    //Category filter(empty string means show all categories)
+    .filter(c => category ? c.category === category:true)
+    //minValue filters car with HP greater than or equal
+    .filter(c => minValue ? c.hp >= Number(minValue) : true)
+    //maxValue filters can with price less than or equal to input
+    .filter(c => maxValue ? c.price <= Number(maxValue) : true)
+    .sort((a,b) => {
+      //Lowercase strings before comparing so sort is case-insensitive
+      const A = typeof a[sortKey] === 'string' ? a[sortKey].toLowerCase() : a[sortKey]
+      const B = typeof b[sortKey] === 'string' ? b[sortKey].toLowerCase() : b[sortKey]
+      if (A < B) return sortDir === 'asc' ? -1 : 1
+      if (A > B) return sortDir === 'asc' ? 1 : -1
+      return 0
+      })
+
+}, [items, search, category, minValue, maxValue, sortKey, sortDir])
 
   return {
     items, setItems,
