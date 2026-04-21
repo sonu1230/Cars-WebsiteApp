@@ -13,6 +13,16 @@ const defaultItems = [
   { id: '8', name: 'Aventador',     category: 'Supercar', year: 2011, hp: 700,  price: 400000,  description: 'Lamborghini V12 flagship.' },
 ]
 
+// Safe parse to contoll corrupted localStorage data never crashes the app
+function safeLoad() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    // Return prase data if data exists otherwise go to default items
+    return raw ? JSON.parse(raw) : defaultItems
+  } catch {
+    return defaultItems
+  }
+}
 
 export default function useItems(){
   const [items, setItems] = useState([])
