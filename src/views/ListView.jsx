@@ -60,7 +60,32 @@ export default function ListView(){
           </select>
         </div>
 
-        {/* TODO: min/max */}
+        {/* min/max */}
+        {/*Minimum Horse Power*/}
+         <div className="col-md-2">
+          <label className="form-label small mb-1">Min HP</label>
+          <input
+            className="form-control"
+            type="number"
+            placeholder="e.g. 300"
+            value={minValue}
+            onChange={e => setMinValue(e.target.value)}
+          />
+        </div>
+
+        {/* Max Price: shows only cars priced at or below this value */}
+        <div className="col-md-2">
+          <label className="form-label small mb-1">Max Price $</label>
+          <input
+            className="form-control"
+            type="number"
+            placeholder="e.g. 100000"
+            value={maxValue}
+            onChange={e => setMaxValue(e.target.value)}
+          />
+        </div>
+
+
         {/* TODO: sort key/dir */}
       </div>
 
