@@ -16,6 +16,14 @@ export default function ListView(){
     categories
   } = ctx 
 
+  // Resetting all filters so user can start fresh without manually clearing each one
+  function clearFilters() {
+    setSearch('')
+    setCategory('')
+    setMinValue('')
+    setMaxValue('')
+  }
+
   return (
     <div>
       <div className="row g-2 align-items-end mb-3">
