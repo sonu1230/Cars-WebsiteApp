@@ -37,6 +37,13 @@ function validate(data) {
   return e
   }
 
+  // Update one field giving instantly immediate feedback fro errors
+  function handleChange(e) {
+    const { name, value } = e.target
+    setForm(prev => ({ ...prev, [name]: value }))
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }))
+  }
+
 
   function onSubmit(e){ e.preventDefault(); /* TODO: validate + save */ }
   return (
