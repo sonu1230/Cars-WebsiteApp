@@ -35,6 +35,18 @@ export default function ListView(){
         <Link to="/new" className="btn btn-dark">+ Add Car</Link>
       </div>
       {/* search */}
+      <div className="row g-2 align-items-end mb-4">
+
+        {/* Search by name  */}
+        <div className="col-md-3">
+          <label className="form-label small mb-1">Search</label>
+          <input
+            className="form-control"
+            placeholder="Search by name..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </div>
         {/* TODO: category filter */}
         {/* TODO: min/max */}
         {/* TODO: sort key/dir */}
