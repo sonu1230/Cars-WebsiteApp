@@ -26,8 +26,15 @@ export default function ListView(){
 
   return (
     <div>
-      <div className="row g-2 align-items-end mb-3">
-        {/* TODO: search */}
+       <div className="d-flex justify-content-between align-items-center mb-3">
+        <h2>
+          All Cars{' '}
+          {/* Result count updates live as filters change */}
+          <span className="text-muted fs-6">({derived.length} results)</span>
+        </h2>
+        <Link to="/new" className="btn btn-dark">+ Add Car</Link>
+      </div>
+      {/* search */}
         {/* TODO: category filter */}
         {/* TODO: min/max */}
         {/* TODO: sort key/dir */}
