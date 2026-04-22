@@ -51,6 +51,22 @@ export default function DetailView(){
                   <tr><th>Description</th><td>{item.description || '—'}</td></tr>
                 </tbody>
               </table>
+                <div className="d-flex gap-2">
+                <Link to={`/edit/${item.id}`} className="btn btn-outline-primary">
+                  Edit
+                </Link>
+                <button className="btn btn-outline-danger" onClick={handleDelete}>
+                  Delete
+                </button>
+                {/* pushes Back to right edge for visual balance */}
+                <button
+                  className="btn btn-outline-secondary ms-auto"
+                  onClick={() => navigate(-1)}
+                >
+                  ← Back
+                </button>
+              </div>
+              </div>
 
 
          </div>
