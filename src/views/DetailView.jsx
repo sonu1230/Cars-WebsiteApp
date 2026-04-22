@@ -40,7 +40,19 @@ export default function DetailView(){
               <h3 className="mb-0">{item.name}</h3>
               <span className="badge bg-secondary">{item.category}</span>
             </div>
-            
+            <div className="card-body">
+              {/* Making Bordered table to make specs easy to read*/}
+              <table className="table table-bordered mb-3">
+                <tbody>
+                  <tr><th>Category</th><td>{item.category}</td></tr>
+                  <tr><th>Year</th><td>{item.year}</td></tr>
+                  <tr><th>Horsepower</th><td>{item.hp} hp</td></tr>
+                  <tr><th>Price</th><td>${item.price.toLocaleString()}</td></tr>
+                  <tr><th>Description</th><td>{item.description || '—'}</td></tr>
+                </tbody>
+              </table>
+
+
          </div>
         </div>
       </div>
