@@ -9,6 +9,11 @@ export default function ItemForm({ initial, onSave, onCancel }){
   // Initialize from initial to pre-fills existing car data
 const [form, setForm]     = useState(initial || emptyForm)
 const [errors, setErrors] = useState({})
+
+//Re-sync form state when initial changes so navigating beetween different edit routes
+useEffect(() => {
+    setForm(initial || emptyForm)
+}, [initial])
   function onSubmit(e){ e.preventDefault(); /* TODO: validate + save */ }
   return (
     <form className="row g-3" onSubmit={onSubmit} noValidate>
