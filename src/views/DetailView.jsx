@@ -32,7 +32,18 @@ export default function DetailView(){
   return (
     <div>
       <div className="mb-3"><Link className="btn btn-sm btn-outline-secondary" to="/list">← Back to list</Link></div>
-      <div className="alert alert-secondary">TODO: DetailView for id: {id}</div>
+      <div className="row justify-content-center">
+        <div className="col-md-7">
+          <div className="card shadow">
+            {/* Dark header showing car name and category badge side by side */}
+            <div className="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+              <h3 className="mb-0">{item.name}</h3>
+              <span className="badge bg-secondary">{item.category}</span>
+            </div>
+            
+         </div>
+        </div>
+      </div>
     </div>
   )
 }
