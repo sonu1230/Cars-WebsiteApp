@@ -129,6 +129,21 @@ function validate(data) {
         {errors.hp && <div className="invalid-feedback">{errors.hp}</div>}
       </div>
 
+      {/* Price field must be positive */}
+      <div className="col-md-6">
+        <label className="form-label fw-bold">Price USD *</label>
+        <input
+          className={`form-control ${errors.price ? 'is-invalid' : ''}`}
+          name="price"
+          type="number"
+          value={form.price}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          placeholder="e.g. 60000"
+        />
+        {errors.price && <div className="invalid-feedback">{errors.price}</div>}
+      </div>
+
       {/* TODO: description */}
       <div className="col-12 d-flex gap-2">
         <button className="btn btn-primary" type="submit">Save</button>
