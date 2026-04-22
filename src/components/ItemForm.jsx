@@ -6,6 +6,9 @@ const CATEGORIES = ['Muscle', 'Sports', 'Supercar', 'Hypercar', 'EV', 'GT', 'Hyb
 const emptyForm = { name: '', category: '', year: '', hp: '', price: '', description: '' }
 
 export default function ItemForm({ initial, onSave, onCancel }){
+  // Initialize from initial to pre-fills existing car data
+const [form, setForm]     = useState(initial || emptyForm)
+const [errors, setErrors] = useState({})
   function onSubmit(e){ e.preventDefault(); /* TODO: validate + save */ }
   return (
     <form className="row g-3" onSubmit={onSubmit} noValidate>
