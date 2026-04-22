@@ -70,7 +70,7 @@ function validate(data) {
 
   return (
     <form className="row g-3" onSubmit={onSubmit} noValidate>
-      {/* TODO: name/title (required) */}
+      {/* name/title (required) */}
       <div className="col-12">
         <label className="form-label fw-bold">Car Name *</label>
         <input
@@ -83,7 +83,21 @@ function validate(data) {
         />
         {errors.name && <div className="invalid-feedback">{errors.name}</div>}
       </div>
-      {/* TODO: category (required) */}
+      {/* category (required) */}
+      <div className="col-md-6">
+        <label className="form-label fw-bold">Category *</label>
+        <select
+          className={`form-select ${errors.category ? 'is-invalid' : ''}`}
+          name="category"
+          value={form.category}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        >
+          <option value="">Select category...</option>
+          {CATEGORIES.map(c => <option key={c}>{c}</option>)}
+        </select>
+        {errors.category && <div className="invalid-feedback">{errors.category}</div>}
+      </div>
       {/* TODO: numeric fields like price/rating with validation */}
       {/* TODO: description */}
       <div className="col-12 d-flex gap-2">
