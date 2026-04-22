@@ -13,7 +13,16 @@ const badgeColor = {
   Hybrid:   'secondary'
 }
 
-export default function ItemCard(/* { item, onView, onEdit, onDelete } */){
+export default function ItemCard({ item }){
+  //Pull delete item action from context
+  const {deleteItem} = useItemsContext()
+
+  //window.comfirm prevents accential deletion by requiring user confirmation
+   function handleDelete() {
+    if (window.confirm(`Delete ${item.name}?`)) {
+      deleteItem(item.id)
+    }
+  }
   return (
     <div className="card h-100">
       <div className="card-body">
