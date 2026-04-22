@@ -14,6 +14,30 @@ const [errors, setErrors] = useState({})
 useEffect(() => {
     setForm(initial || emptyForm)
 }, [initial])
+
+// Returns an object of field errors where empty object means form is valid
+function validate(data) {
+  const e = {}
+  if (!data.name.trim())
+    e.name = 'Name is required.'
+  if (!data.category)
+    e.category = 'Category is required.'
+  if (!data.year)
+    e.year = 'Year is required.'
+  else if (Number(data.year) < 1885 || Number(data.year) > 2025)
+    e.year = 'Year must be between 1885 and 2025.'
+  if (!data.hp)
+    e.hp = 'Horsepower is required.'
+  else if (Number(data.hp) < 1 || Number(data.hp) > 2000)
+    e.hp = 'HP must be between 1 and 2000.'
+  if (!data.price)
+    e.price = 'Price is required.'
+  else if (Number(data.price) < 0)
+    e.price = 'Price must be a positive number.'
+  return e
+  }
+
+
   function onSubmit(e){ e.preventDefault(); /* TODO: validate + save */ }
   return (
     <form className="row g-3" onSubmit={onSubmit} noValidate>
