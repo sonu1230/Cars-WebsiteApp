@@ -20,6 +20,15 @@ export default function DetailView(){
       </div>
     )
   }
+
+  function handleDelete() {
+    // control or confirm giving dialog on acceidental permanent deleteion.
+    if (window.confirm(`Delete ${item.name}?`)) {
+      ctx.deleteItem(item.id)
+      // Navigate to list after delete 
+      navigate('/list')
+    }
+  }
   return (
     <div>
       <div className="mb-3"><Link className="btn btn-sm btn-outline-secondary" to="/list">← Back to list</Link></div>
