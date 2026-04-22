@@ -1,6 +1,11 @@
 import React from 'react'
 
-export default function ItemForm(/* { initial, onSave, onCancel } */){
+const CATEGORIES = ['Muscle', 'Sports', 'Supercar', 'Hypercar', 'EV', 'GT', 'Hybrid']
+
+//Empty form used when creating a new car
+const emptyForm = { name: '', category: '', year: '', hp: '', price: '', description: '' }
+
+export default function ItemForm({ initial, onSave, onCancel }){
   function onSubmit(e){ e.preventDefault(); /* TODO: validate + save */ }
   return (
     <form className="row g-3" onSubmit={onSubmit} noValidate>
