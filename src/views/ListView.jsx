@@ -86,7 +86,20 @@ export default function ListView(){
         </div>
 
 
-        {/* TODO: sort key/dir */}
+         {/* Sort key:controls which field the derived list sorts by */}
+        <div className="col-md-1">
+          <label className="form-label small mb-1">Sort</label>
+          <select
+            className="form-select"
+            value={sortKey}
+            onChange={e => setSortKey(e.target.value)}
+          >
+            <option value="name">Name</option>
+            <option value="year">Year</option>
+            <option value="hp">HP</option>
+            <option value="price">Price</option>
+          </select>
+        </div>
       </div>
 
       {/* TODO: empty state */}
