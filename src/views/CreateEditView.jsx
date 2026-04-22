@@ -45,14 +45,25 @@ export default function CreateEditView(){
     setTimeout(() => navigate('/list'), 1000)
   }
 
-
-  
-
-
   return (
-    <div>
-      <h2 className="h5 mb-3">{id ? 'Edit Item' : 'Add Item'}</h2>
-      <ItemForm /* initial={{}} onSave={(data)=>{}} onCancel={()=>navigate(-1)} */ />
+    <div className="row justify-content-center">
+      <div className="col-md-7">
+        <h2 className="h5 mb-3">{isEdit ? 'Edit Car' : 'Add New Car'}</h2>
+
+        {/* Success alert appears after save and disappears on redirect */}
+        {saved && (
+          <div className="alert alert-success mb-3">
+            Car {isEdit ? 'updated' : 'added'} successfully! Redirecting...
+          </div>
+        )}
+
+        {/* Pass existing car as initial so edit mode pre-fills all fields */}
+        <ItemForm
+          initial={existing}
+          onSave={handleSave}
+          onCancel={() => navigate(-1)}
+        />
+      </div>
     </div>
   )
 }
