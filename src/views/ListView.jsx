@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import ItemCard from '../components/ItemCard'
 import { ItemsContext } from '../context/ItemsContext'
+import { Link } from 'react-router-dom'
 
 export default function ListView(){
   const ctx = useContext(ItemsContext)
@@ -101,8 +102,8 @@ export default function ListView(){
           </select>
         </div>
       </div>
-{/* Direction toggle: flips between ascending and descending on each click */}
-      <div className="col-md-1">
+       {/* Direction toggle: flips between ascending and descending on each click */}
+       <div className="col-md-1">
           <label className="form-label small mb-1">Dir</label>
           <button
             className="btn btn-outline-dark w-100"
@@ -112,14 +113,25 @@ export default function ListView(){
           </button>
         </div>
 
-      </div>
+      
 
-      {/* TODO: empty state */}
+      {/* Empty state */}
+      {derived.length === 0 && (
+        <div className="text-center py-5 text-muted">
+          <p>No cars match your search or filters.</p>
+          <button className="btn btn-outline-dark" onClick={clearFilters}>
+            Clear Filters
+          </button>
+        </div>
+      )}
 
       <div className="row g-3">
-        {/* TODO: map ctx.derived to ItemCard */}
-        <div className="col-12"><div className="alert alert-info">TODO: derived list</div></div>
-      </div>
+        {derived.map(item => (
+          <div className="col-sm-6 col-lg-4" key={item.id}>
+            <ItemCard item={item} />
+          </div>
+        ))}
+    </div>
     </div>
   )
 }
