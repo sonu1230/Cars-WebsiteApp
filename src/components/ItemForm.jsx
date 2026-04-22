@@ -43,6 +43,13 @@ function validate(data) {
     setForm(prev => ({ ...prev, [name]: value }))
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }))
   }
+// Show inline error and error user fills the forms
+   function handleBlur(e) {
+    const { name } = e.target
+    const errs = validate(form)
+    if (errs[name]) setErrors(prev => ({ ...prev, [name]: errs[name] }))
+  }
+
 
 
   function onSubmit(e){ e.preventDefault(); /* TODO: validate + save */ }
