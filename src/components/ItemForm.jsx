@@ -49,10 +49,17 @@ function validate(data) {
     const errs = validate(form)
     if (errs[name]) setErrors(prev => ({ ...prev, [name]: errs[name] }))
   }
+  function onSubmit(e){
+    e.preventDefault()
+      /* validate + save */ }
+    const errs = validate(form)
+    // Show all errors at once if user tries to submit with empty fields
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs)
+      return
+    }
+    
 
-
-
-  function onSubmit(e){ e.preventDefault(); /* TODO: validate + save */ }
   return (
     <form className="row g-3" onSubmit={onSubmit} noValidate>
       {/* TODO: name/title (required) */}
