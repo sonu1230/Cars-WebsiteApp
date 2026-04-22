@@ -58,6 +58,14 @@ function validate(data) {
       setErrors(errs)
       return
     }
+// Convert string inputs to numbers before saving
+    onSave({
+      ...form,
+      year:  Number(form.year),
+      hp:    Number(form.hp),
+      price: Number(form.price)
+    })
+  }
     
 
   return (
