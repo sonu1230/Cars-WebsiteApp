@@ -17,7 +17,7 @@ npm install
 npm run dev
 
 ## Live URL
-https://sonu1230.github.io/Cars-WebsiteAPP
+http://localhost:5173/Cars-WebsiteAPP/#/
 
 ## GitHub Repo
 https://github.com/sonu1230/Cars-WebsiteAPP
