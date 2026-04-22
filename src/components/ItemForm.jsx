@@ -71,6 +71,18 @@ function validate(data) {
   return (
     <form className="row g-3" onSubmit={onSubmit} noValidate>
       {/* TODO: name/title (required) */}
+      <div className="col-12">
+        <label className="form-label fw-bold">Car Name *</label>
+        <input
+          className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          placeholder="e.g. Porsche 911 GT3"
+        />
+        {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+      </div>
       {/* TODO: category (required) */}
       {/* TODO: numeric fields like price/rating with validation */}
       {/* TODO: description */}
