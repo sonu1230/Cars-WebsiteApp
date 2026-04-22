@@ -30,6 +30,21 @@ export default function CreateEditView(){
         </span>
       </div>
     )
+  }
+
+  function handleSave(data) {
+    if (isEdit) {
+      // updateItem new added car into existing car ,keeping the same id
+      ctx.updateItem(id, data)
+    } else {
+      // addItem generates a new id automatically inside useItems
+      ctx.addItem(data)
+    }
+    setSaved(true)
+    // 1 second delay lets user read success message before redirect fires
+    setTimeout(() => navigate('/list'), 1000)
+  }
+
 
   
 
