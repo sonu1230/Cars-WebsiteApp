@@ -98,7 +98,22 @@ function validate(data) {
         </select>
         {errors.category && <div className="invalid-feedback">{errors.category}</div>}
       </div>
-      {/* TODO: numeric fields like price/rating with validation */}
+      {/* numeric fields like year/horsepower/price with validation */}
+      {/* Year field with range 1885 to 2025 */}
+      <div className="col-md-6">
+        <label className="form-label fw-bold">Year * (1885–2025)</label>
+        <input
+          className={`form-control ${errors.year ? 'is-invalid' : ''}`}
+          name="year"
+          type="number"
+          value={form.year}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          placeholder="e.g. 1993"
+        />
+        {errors.year && <div className="invalid-feedback">{errors.year}</div>}
+      </div>
+
       {/* TODO: description */}
       <div className="col-12 d-flex gap-2">
         <button className="btn btn-primary" type="submit">Save</button>
