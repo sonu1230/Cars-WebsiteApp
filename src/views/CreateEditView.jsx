@@ -7,7 +7,12 @@ export default function CreateEditView(){
   const { id } = useParams()
   const navigate = useNavigate()
   const ctx = useContext(ItemsContext)
-  // TODO: initial if editing; onSave add/update then navigate
+  // initial if editing; onSave add/update then navigate
+
+  //If id exists in URL which one is editing otherwise creating
+  const isEdit   = Boolean(id)
+  const existing = isEdit ? ctx.items.find(c => c.id === id) : null
+
 
   return (
     <div>
