@@ -3,7 +3,18 @@ import ItemCard from '../components/ItemCard'
 import { ItemsContext } from '../context/ItemsContext'
 
 export default function ListView(){
-  const ctx = useContext(ItemsContext) // TODO: use ctx.derived and filters
+  const ctx = useContext(ItemsContext)
+   // use ctx.derived and filters
+  const {
+    derived,
+    search,   setSearch,
+    category, setCategory,
+    sortKey,  setSortKey,
+    sortDir,  setSortDir,
+    minValue, setMinValue,
+    maxValue, setMaxValue,
+    categories
+  } = ctx 
 
   return (
     <div>
