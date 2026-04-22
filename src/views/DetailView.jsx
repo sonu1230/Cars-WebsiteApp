@@ -1,3 +1,10 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: Find cars by URL param, display full specsin table and provide edit delete and back navigation.
+*/
+
+
 import React, { useContext } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { ItemsContext } from '../context/ItemsContext'

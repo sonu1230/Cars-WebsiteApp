@@ -1,3 +1,12 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: Wraps all routes
+*/
+
+
+
+
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'

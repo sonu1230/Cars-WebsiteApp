@@ -1,3 +1,10 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: Display cars field, color category and view edit delete action button for each car.
+*/
+
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useItemsContext } from '../context/ItemsContext'

@@ -1,3 +1,12 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: cover setup instructions with live url
+*/
+
+
+
+
 ## CarVault – Capstone SPA
 
 A multi-view React SPA for managing a personal car collection.

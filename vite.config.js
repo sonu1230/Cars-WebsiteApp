@@ -1,3 +1,11 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: Register react plugin
+*/
+
+
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 

@@ -1,3 +1,10 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: Handles both add and edit mode, validates all field and show line error message.
+*/
+
+
 import React, { useState, useEffect } from 'react'
 
 

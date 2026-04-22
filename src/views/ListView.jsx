@@ -1,3 +1,10 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: Show all cars in a grid with live search and other features.
+*/
+
+
 import React, { useContext } from 'react'
 import ItemCard from '../components/ItemCard'
 import { ItemsContext } from '../context/ItemsContext'

@@ -1,3 +1,12 @@
+/**
+*Name: Sonu Kumari Mahato Panjiyar
+*Date: April 21, 2026
+*Description: Render the nav bar with active link
+*/
+
+
+
+
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
