@@ -13,6 +13,26 @@ export default function CreateEditView(){
   const isEdit   = Boolean(id)
   const existing = isEdit ? ctx.items.find(c => c.id === id) : null
 
+  // Controls success banner shown briefly before redirecting to list
+  const [saved, setSaved] = useState(false)
+
+// Alert warning editing a car id that does not exist in items array
+  if (isEdit && !existing) {
+    return (
+      <div className="alert alert-warning">
+        Car not found.{' '}
+        <span
+          className="text-decoration-underline"
+          style={{ cursor: 'pointer' }}
+          onClick={() => navigate('/list')}
+        >
+          Back to list
+        </span>
+      </div>
+    )
+
+  
+
 
   return (
     <div>
