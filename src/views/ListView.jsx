@@ -47,7 +47,19 @@ export default function ListView(){
             onChange={e => setSearch(e.target.value)}
           />
         </div>
-        {/* TODO: category filter */}
+        {/* category filter */}
+        <div className="col-md-3">
+          <label className="form-label small mb-1">Category</label>
+          <select
+            className="form-select"
+            value={category}
+            onChange={e => setCategory(e.target.value)}
+          >
+            <option value="">All Categories</option>
+            {categories.map(c => <option key={c}>{c}</option>)}
+          </select>
+        </div>
+
         {/* TODO: min/max */}
         {/* TODO: sort key/dir */}
       </div>
