@@ -114,6 +114,21 @@ function validate(data) {
         {errors.year && <div className="invalid-feedback">{errors.year}</div>}
       </div>
 
+      {/* Horsepower field with range 1 to 2000 */}
+      <div className="col-md-6">
+        <label className="form-label fw-bold">Horsepower * (1–2000)</label>
+        <input
+          className={`form-control ${errors.hp ? 'is-invalid' : ''}`}
+          name="hp"
+          type="number"
+          value={form.hp}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          placeholder="e.g. 450"
+        />
+        {errors.hp && <div className="invalid-feedback">{errors.hp}</div>}
+      </div>
+
       {/* TODO: description */}
       <div className="col-12 d-flex gap-2">
         <button className="btn btn-primary" type="submit">Save</button>
