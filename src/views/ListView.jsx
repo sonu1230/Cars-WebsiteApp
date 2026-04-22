@@ -103,7 +103,7 @@ export default function ListView(){
         </div>
       </div>
        {/* Direction toggle: flips between ascending and descending on each click */}
-       <div className="col-md-1">
+       <div className="col-md-1"> 
           <label className="form-label small mb-1">Dir</label>
           <button
             className="btn btn-outline-dark w-100"

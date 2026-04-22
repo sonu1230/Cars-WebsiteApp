@@ -25,7 +25,7 @@ function safeLoad() {
 }
 
 export default function useItems(){
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(safeLoad)
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('')
   const [sortKey, setSortKey] = useState('name')
